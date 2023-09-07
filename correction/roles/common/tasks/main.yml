@@ -1,0 +1,13 @@
+---
+# tasks file for roles/common
+- name: Installer les paquets 
+  ansible.builtin.package:
+    name: "{{ item.package }}"
+    state: present
+  when: ansible_os_family in ['Debian', 'Oracle']
+  with_items: "{{ common_packages }}"
+
+
+- name: log text file
+  ansible.builtin.debug:
+    msg: "text file = {{}}"

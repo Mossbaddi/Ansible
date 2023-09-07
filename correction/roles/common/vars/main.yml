@@ -1,0 +1,7 @@
+---
+# vars file for roles/common
+common_packages:
+  - name: apache2
+    package: apache2
+  - name: php
+    package: php

@@ -1,0 +1,4 @@
+---
+# vars file for roles/webserver
+port_number: 80
+admin_name: Mostapha

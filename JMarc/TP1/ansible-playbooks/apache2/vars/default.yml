@@ -1,0 +1,6 @@
+---
+app_user: "www-data"
+http_host: "monsite"
+http_conf: "monsite.conf"
+http_port: "80"
+disable_default: true

@@ -1,0 +1,24 @@
+---
+# tasks file for roles
+- name: Démarrer Apache
+  ansible.builtin.service:
+    name: apache2
+    state: started
+
+- name: Copier la conf
+  ansible.builtin.template:
+    src: apache2.conf.j2
+    dest: /etc/apache2/sites-available/000-default.conf
+  notify: restart apache
+
+- name: Créer un répertoire
+  ansible.builtin.file:
+    path: /var/www/html/app
+    state: directory
+    mode: '0755'
+
+- name: Copier le fichier index
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /etc/apache2/sites-available/000-default.conf
+
